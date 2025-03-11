@@ -30,18 +30,19 @@ def animated_logo():
     logo = """
     ███████╗██████╗ ██╗   ██╗███╗   ██╗███████╗████████╗
     ██╔════╝██╔══██╗╚██╗ ██╔╝████╗  ██║██╔════╝╚══██╔══╝
-    ███████╗██████╔╝ ╚████╔╝ ██╔██╗ ██║█████╗     ██║   
-    ╚════██║██╔═══╝   ╚██╔╝  ██║╚██╗██║██╔══╝     ██║   
-    ███████║██║        ██║   ██║ ╚████║███████╗   ██║   
+    ███████╗██████╔╝ ╚████╔╝ ██╔██╗ ██║█████╗     ██║               ╦╔╦╗╔═╗┌─┐┬ ┬┬─┐┌┐ ┌─┐
+    ╚════██║██╔═══╝   ╚██╔╝  ██║╚██╗██║██╔══╝     ██║    AUTHOR:    ║║║║╠═╣├─┘│ │├┬┘├┴┐│ │       
+    ███████║██║        ██║   ██║ ╚████║███████╗   ██║               ╩╩ ╩╩ ╩┴  └─┘┴└─└─┘└─┘
     ╚══════╝╚═╝        ╚═╝   ╚═╝  ╚═══╝╚══════╝   ╚═╝   
                       S P Y N E T
     """
-    console.print("\n[bold]SpyNet - Advanced ARP Spoofing Engine[/bold]")
-    for _ in range(10):
+    
+    for _ in range(1):
         sys.stdout.write(f'\r{mandonga.RED}{logo}{utopolo.RESET_ALL}')
         sys.stdout.flush()
         time.sleep(0.2)
     sys.stdout.write('\r' + ' ' * 50 + '\r')
+    console.print("\n[bold]SpyNet - Advanced ARP Spoofing Engine[/bold]")
     loading_animation("Initializing SpyNet", duration=3, color=mandonga.CYAN)
 
 def loading_animation(message, duration=5, color=mandonga.YELLOW):
