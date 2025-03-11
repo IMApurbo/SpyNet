@@ -201,6 +201,17 @@ def http_sniffer(packet, table, output_file):
             if 'GET' in payload[:100] or 'POST' in payload[:100]:
                 request_type = 'POST' if 'POST' in payload[:100] else 'GET'
                 lines = payload.split('\r\n')
+                # Extract the first line (request line)
+                request_line = lines[0].strip() if lines else ''
+                url = None
+                if request_line:
+                    parts = request_line.split()
+                    if len(parts) >= 2 and parts[0] in ('GET', 'POST'):
+                        path = parts[1]
+                        # Construct full URL using destination IP
+                        dst_ip = packet[scapy.IP].dst
+                        url = f"http://{dst_ip}{path}"
+                
                 headers = [line for line in lines if ': ' in line]
                 body = lines[-1] if lines[-1] else ''
                 timestamp = str(datetime.now())
@@ -209,8 +220,8 @@ def http_sniffer(packet, table, output_file):
                 header = headers[0] if headers else 'No headers'
                 body_preview = body[:200]
 
-                # Display both GET and POST in terminal
-                table.add_row(timestamp, request_type, src_ip, dst_ip, header, body_preview)
+                # Display both GET and POST with URL in terminal
+                table.add_row(timestamp, request_type, url or 'N/A', src_ip, dst_ip, header, body_preview)
                 console.print(table)
 
                 # Save only POST to file
@@ -229,6 +240,7 @@ def start_http_sniffer(output_file):
     table = Table(show_header=True, header_style="bold magenta")
     table.add_column("Timestamp", style="dim")
     table.add_column("Type", style="cyan")
+    table.add_column("URL", style="blue")
     table.add_column("Source IP", style="green")
     table.add_column("Destination IP", style="green")
     table.add_column("Header", style="yellow")
