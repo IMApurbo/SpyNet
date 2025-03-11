@@ -31,9 +31,9 @@ def banner():
 {mandonga.CYAN}
 ######################################################
 #                                                    #
-#                 Welcome to CyberWarrior            #
-#                ADVANCE ARP Spoofing Engine         #
-#                   Author: AuxGrep                  #
+#                         SPYNET                     #
+#                     SPY EVERYTHING                 #
+#               Author: AKM Korishee Apurbo          #
 ######################################################
 {utopolo.RESET_ALL}
 """)
