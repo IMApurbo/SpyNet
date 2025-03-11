@@ -71,7 +71,7 @@ SpyNet is a Python-based network security tool designed for advanced ARP spoofin
 - **HTTPS Table**: Displays timestamp, type (HTTPS), domain, and source/destination IPs (red header).
 - **CSV File** (if enabled): Logs HTTP POST requests and HTTPS domains with timestamps and IP details.
 ### ScreenShot
-![Screenshot_2025-03-11_09_26_24](https://github.com/user-attachments/assets/cfdca7f1-cb70-456f-9ac2-37ff82c1deef)
+![Screenshot_2025-03-11_09_26_24](https://github.com/user-attachments/assets/637422da-e2a7-465b-9a18-b0fbda40011e)
 
 #### Example Output
 **HTTP Table**:
